@@ -1,0 +1,36 @@
+{
+   "lambdatest_auth": {
+      "username": "shubhamr",
+      "access_key": "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh"
+   },
+   "browsers": [
+      {
+         "browser": "Chrome",
+         "platform": "Windows 10",
+         "versions": [
+            "latest-1"
+         ]
+      }
+   ],
+   "run_settings": {
+      "reporter_config_file": "base_reporter_config.json",
+      "build_name": "Cypress 10",
+      "parallels": 1,
+      "specs": "cypress/e2e/1-getting-started/smartui.cy.js",
+      "ignore_files": "",
+      "network": false,
+      "headless": false,
+      "npm_dependencies": {
+         "cypress": "10.0.0"
+      },
+      "smart_ui": {
+         "project": "LambdaTest smartUI Cypress",
+         "build": "Build baseline", 
+         "baseline": false
+      }
+   },
+   "tunnel_settings": {
+      "tunnel": false,
+      "tunnel_name": null
+   }
+}

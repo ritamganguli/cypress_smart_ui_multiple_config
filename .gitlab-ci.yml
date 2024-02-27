@@ -1,0 +1,14 @@
+image: cypress/base:10
+
+stages:
+  - test
+
+build:
+    stage: test
+    script:
+       - cd /builds/abidkidwai786/lambdatest-cypress10
+       - npm install
+       - echo 'export LT_USERNAME=LT_user_name' >> ~/.bashrc
+       - echo 'export LT_ACCESS_KEY=LT_access_key' >> ~/.bashrc
+       - lambdatest-cypress run
+       
