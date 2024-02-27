@@ -1,0 +1,23 @@
+name: Parallel Cypress Test Execution
+
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        config: [lambda-config.json, lambdatest-config.json]
+      fail-fast: false # This ensures that if one job fails, the other continues
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.11.0'
+    - name: Install Dependencies
+      run: npm install
+    - name: Install lambdatest-cypress-cli Globally
+      run: npm install -g lambdatest-cypress-cli
+    - name: Run Cypress Tests
+      run: lambdatest-cypress run --lcf ${{ matrix.config }}
